@@ -14,8 +14,6 @@ public class Album extends GenericEntity implements Comparable<Album> {
     @OneToMany(mappedBy = "album")
     private List<Artist> artists;
 
-    @OneToMany
-
     public Album() {
     }
 
