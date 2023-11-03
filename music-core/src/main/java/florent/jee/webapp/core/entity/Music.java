@@ -10,8 +10,6 @@ public class Music extends GenericEntity{
     private String title;
     private String duration;
 
-    @OneToOne
-    private Album album;
 
     public Music() {
     }

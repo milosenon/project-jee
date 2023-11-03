@@ -1,9 +1,13 @@
 package florent.jee.webapp.core.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 import java.util.List;
 
+@Entity
+@Table(name="artist")
 public class Artist extends GenericEntity implements Comparable<Artist> {
 
     private String firstname;
