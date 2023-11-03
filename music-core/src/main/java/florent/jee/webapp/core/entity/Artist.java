@@ -26,6 +26,7 @@ public class Artist extends GenericEntity implements Comparable<Artist> {
         this.nationality = nationality;
     }
 
+
     public String getFirstname() {
         return firstname;
     }
