@@ -6,7 +6,11 @@ import java.util.List;
 
 @Entity
 @Table(name="album")
-public class Album extends GenericEntity implements Comparable<Album> {
+public class Album implements Comparable<Album>{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String title;
     private String releaseDate;
     private String duration;

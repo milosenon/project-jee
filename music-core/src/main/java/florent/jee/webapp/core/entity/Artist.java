@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name="artist")
-public class Artist extends GenericEntity implements Comparable<Artist> {
+public class Artist implements Comparable<Artist> {
 
     private String firstname;
     private String lastname;

@@ -1,12 +1,15 @@
 package florent.jee.webapp.core.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="music")
-public class Music extends GenericEntity{
+public class Music {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String title;
     private String duration;
 
@@ -16,6 +19,30 @@ public class Music extends GenericEntity{
 
     public Music(String title, String duration) {
         this.title = title;
+        this.duration = duration;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 }

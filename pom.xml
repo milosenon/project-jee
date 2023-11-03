@@ -12,6 +12,7 @@
         <module>music-core</module>
         <module>music-data</module>
         <module>music-web</module>
+        <module>music-api</module>
     </modules>
 
     <properties>
@@ -38,7 +39,7 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <artifactId>spring-boot-maven-depency</artifactId>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
