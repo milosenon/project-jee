@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Music List</title>
+</head>
+<body>
+<h1>Music List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Album</th>
+        <th>Music Title</th>
+        <th>Artist</th>
+        <th>Duration</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Use Thymeleaf to iterate over music and albums from your model -->
+    <tr th:each="music : ${musicList}">
+        <td th:text="${music.album.name}"></td>
+        <td th:text="${music.title}"></td>
+        <td th:text="${music.artist}"></td>
+        <td th:text="${music.duration}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

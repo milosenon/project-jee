@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Music</title>
+    </head>
+    <body>
+        <h1>Add Music</h1>
+        <form th:action="@{/music/add}" method="post">
+            <label for="albumId">Select Album:</label>
+            <select id="albumId" name="albumId" required>
+                <option th:each="album : ${albumList}"
+                        th:value="${album.id}"
+                        th:text="${album.name}"></option>
+            </select>
+            <br>
+            <label for="musicTitle">Music Title:</label>
+            <input type="text" id="musicTitle" name="musicTitle" required>
+            <br>
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" required>
+            <br>
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" name="duration">
+            <br>
+            <button type="submit">Add Music</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+    <head>
+        <meta charset="UTF-8">
+        <title>Modify Music</title>
+    </head>
+    <body>
+        <h1>Modify Music</h1>
+        <form th:action="@{/music/modify}" method="post">
+            <input type="hidden" id="musicId" name="musicId" th:value="${music.id}">
+            <label for="albumId">Select Album:</label>
+            <select id="albumId" name="albumId" required>
+                <option th:each="album : ${albumList}"
+                        th:value="${album.id}"
+                        th:text="${album.name}"
+                        th:selected="${album.id == music.album.id}"></option>
+            </select>
+            <br>
+            <label for="musicTitle">Music Title:</label>
+            <input type="text" id="musicTitle" name="musicTitle" th:value="${music.title}" required>
+            <br>
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" th:value="${music.artist}" required>
+            <br>
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" name="duration" th:value="${music.duration}">
+            <br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </body>
+</html>
