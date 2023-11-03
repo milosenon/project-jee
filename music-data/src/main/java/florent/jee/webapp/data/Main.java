@@ -1,4 +1,4 @@
-package florent.jee.webapp;
+package florent.jee.webapp.data;
 
 public class Main {
     public static void main(String[] args) {
