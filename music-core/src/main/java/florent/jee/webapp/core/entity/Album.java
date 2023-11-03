@@ -1,14 +1,15 @@
 package florent.jee.webapp.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name="album")
-
-@JsonIgnoreProperties({ "artists" })
+@JsonIgnoreProperties({ "artist" })
 public class Album implements Comparable<Album>{
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

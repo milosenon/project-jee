@@ -1,5 +1,6 @@
 package florent.jee.webapp.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name="artist")
+@JsonIgnoreProperties({ "album" })
 public class Artist implements Comparable<Artist> {
 
     private String firstname;
@@ -17,7 +19,7 @@ public class Artist implements Comparable<Artist> {
     private String nationality;
 
 
-    @OneToMany(mappedBy = "artist")
+    @OneToMany(mappedBy = "album")
     private List<Album> albums;
 
     public Artist() {

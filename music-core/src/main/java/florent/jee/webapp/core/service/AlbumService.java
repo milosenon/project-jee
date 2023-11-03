@@ -17,7 +17,6 @@ public class AlbumService {
         this.albumDAO = albumDAO;
     }
 
-
     public List<Album> findAll(){ return albumDAO.findAll();}
 
     public List<Album> findAllByArtist(Long idArtist) {

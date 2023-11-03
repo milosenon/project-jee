@@ -1,12 +1,14 @@
 package florent.jee.webapp.core.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.Set;
 
 @Entity
 @Table(name="music")
+@JsonIgnoreProperties({ "artist,album" })
 public class Music {
 
     @Id

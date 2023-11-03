@@ -10,9 +10,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>music-core</module>
-        <module>music-data</module>
         <module>music-web</module>
         <module>music-api</module>
+        <module>music-app</module>
     </modules>
 
     <properties>
@@ -39,8 +39,7 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-depency</artifactId>
-                <version>${spring.boot.version}</version>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -49,7 +48,12 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org</groupId>
+                <artifactId>spring-aop</artifactId>
+            </plugin>
         </plugins>
     </build>
+
 
 </project>
