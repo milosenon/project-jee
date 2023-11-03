@@ -15,6 +15,4 @@ public abstract class GenericEntity {
     public long getId() {
         return id;
     }
-
-
 }

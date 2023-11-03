@@ -1,4 +1,23 @@
 package florent.jee.webapp.core.entity;
 
-public class Music {
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="music")
+public class Music extends GenericEntity{
+    private String title;
+    private String duration;
+
+    @OneToOne
+    private Album album;
+
+    public Music() {
+    }
+
+    public Music(String title, String duration) {
+        this.title = title;
+        this.duration = duration;
+    }
 }
