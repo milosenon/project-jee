@@ -3,6 +3,8 @@ package florent.jee.webapp.core.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name="music")
 public class Music {
@@ -13,6 +15,13 @@ public class Music {
     private String title;
     private String duration;
 
+    @ManyToOne
+    @JoinColumn(name = "album_id")
+    private Album album;
+
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private Artist artist;
 
     public Music() {
     }
@@ -44,5 +53,20 @@ public class Music {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+
+    public Album getAlbum() {
+        return album;
     }
 }

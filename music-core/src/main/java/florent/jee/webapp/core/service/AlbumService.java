@@ -19,4 +19,8 @@ public class AlbumService {
 
 
     public List<Album> findAll(){ return albumDAO.findAll();}
+
+    public List<Album> findAllByArtist(Long idArtist) {
+        return albumDAO.findAllByArtistId(idArtist);
+    }
 }

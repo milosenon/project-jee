@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Album List</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css" >
+
+        <style>
+            body {
+                padding-top: 50px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>List of Album: </h1>
+        </div>
+        <table class="table table-striped">
+            <tr th:each="album:${albumList}">
+                <td th:text="${album.title}"></td>
+                <td th:text="${album.duration}"></td>
+                <td th:text="${album.reease_year}"></td>
+                <td><a th:href="@{'/album/delete/'+${album.id}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+            </tr>
+        </table>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css" >
+
+        <style>
+            body {
+                padding-top: 50px;
+            }
+        </style>
+
+        <table class="table table-striped">
+            <tr th:each="album:${albumList}">
+                <td th:text="${album.title}"></td>
+                <td>
+                    <ul>
+                        <li th:each="music:${artist.album}" >
+                            <span th:text="${music.title}"></span>
+                        </li>
+                    </ul>
+                </td>
+                <td><a th:href="@{'/album/delete/'+${album.id}}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+            </tr>
+        </table>
+    </body>
+</html>
+

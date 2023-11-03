@@ -4,6 +4,7 @@ package florent.jee.webapp.controller;
 import florent.jee.webapp.core.entity.Album;
 import florent.jee.webapp.core.service.AlbumService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,10 @@ public class AlbumController {
     @GetMapping("/")
     public List<Album> findAll(){
         return service.findAll();
+    }
+
+    @GetMapping("/findByArtist/{idArtist}")
+    public List<Album> findAllByArtist(@PathVariable Long idArtist) {
+        return service.findAllByArtist(idArtist);
     }
 }

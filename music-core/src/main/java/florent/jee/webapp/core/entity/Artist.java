@@ -1,10 +1,12 @@
 package florent.jee.webapp.core.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 import java.util.List;
+
 
 @Entity
 @Table(name="artist")
@@ -13,6 +15,7 @@ public class Artist implements Comparable<Artist> {
     private String firstname;
     private String lastname;
     private String nationality;
+
 
     @OneToMany(mappedBy = "artist")
     private List<Album> albums;

@@ -6,6 +6,8 @@ import java.util.List;
 
 @Entity
 @Table(name="album")
+
+@JsonIgnoreProperties({ "artists" })
 public class Album implements Comparable<Album>{
 
     @Id
