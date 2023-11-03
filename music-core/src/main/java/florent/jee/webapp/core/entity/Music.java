@@ -1,7 +1,7 @@
 package florent.jee.webapp.core.entity;
 
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
