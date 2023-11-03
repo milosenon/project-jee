@@ -1,4 +1,6 @@
 package florent.jee.webapp.core.dao;
 
-public interface AlbumDAO {
+import florent.jee.webapp.core.entity.Album;
+
+public interface AlbumDAO extends GenericDAO<Album>{
 }

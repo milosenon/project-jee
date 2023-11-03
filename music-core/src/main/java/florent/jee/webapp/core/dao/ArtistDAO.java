@@ -1,4 +1,6 @@
 package florent.jee.webapp.core.dao;
 
-public interface ArtistDAO {
+import florent.jee.webapp.core.entity.Artist;
+
+public interface ArtistDAO extends GenericDAO<Artist>{
 }
